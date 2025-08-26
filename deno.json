@@ -1,0 +1,44 @@
+{
+  "name": "@yumafuu/clipboard-mcp",
+  "version": "1.0.0",
+  "description": "Cross-platform clipboard MCP server using Deno and mcp-helper",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yumafuu/clipboard-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yumafuu/clipboard-mcp/issues"
+  },
+  "homepage": "https://github.com/yumafuu/clipboard-mcp#readme",
+  "keywords": [
+    "mcp",
+    "clipboard",
+    "cross-platform",
+    "macos",
+    "windows",
+    "linux",
+    "deno",
+    "typescript"
+  ],
+  "exports": {
+    ".": "./clipboard-mcp-server.ts"
+  },
+  "imports": {
+    "@mizchi/mcp-helper": "jsr:@mizchi/mcp-helper",
+    "@modelcontextprotocol/sdk": "npm:@modelcontextprotocol/sdk@1.5.0",
+    "zod": "npm:zod@3.24.2",
+    "@david/dax": "jsr:@david/dax"
+  },
+  "tasks": {
+    "start": "deno run -A clipboard-mcp-server.ts",
+    "test": "deno test -A"
+  },
+  "publish": {
+    "exclude": [
+      ".git",
+      ".gitignore",
+      "crush.md"
+    ]
+  }
+}
