@@ -6,16 +6,30 @@ Cross-platform clipboard MCP server.
 
 Add to your MCP client config:
 
+### macOS / Windows
 ```json
 {
   "mcpServers": {
     "clipboard": {
       "command": "deno",
-      "args": ["run", "-A", "jsr:@yumafuu/clipboard-mcp"]
+      "args": ["run", "-E", "--allow-run", "jsr:@yumafuu/clipboard-mcp"]
     }
   }
 }
 ```
+
+### Linux
+```json
+{
+  "mcpServers": {
+    "clipboard": {
+      "command": "deno",
+      "args": ["run", "-RE", "--allow-run", "jsr:@yumafuu/clipboard-mcp"]
+    }
+  }
+}
+```
+*Note: `-WR (read) is required on Linux to check if `xclip` or `xsel` commands exist*
 
 ## Tools
 
@@ -26,6 +40,10 @@ Add to your MCP client config:
 
 - [Deno](https://deno.land/)
 
+### Platform-specific requirements
+
+- **macOS**: No additional requirements (uses built-in `pbpaste`/`pbcopy`)
+- **Windows**: No additional requirements (uses built-in `clip`/`Get-Clipboard`)
 - **Linux**: Install `xclip` or `xsel`
   ```bash
   sudo apt install xclip  # Ubuntu/Debian
