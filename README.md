@@ -29,7 +29,7 @@ Add to your MCP client config:
   }
 }
 ```
-*Note: `-WR (read) is required on Linux to check if `xclip` or `xsel` commands exist*
+*Note: -R (read) is required on Linux to check if `xclip` or `xsel` commands exist*
 
 ## Tools
 
