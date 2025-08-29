@@ -21,8 +21,9 @@ const tools = [
   },
 ] as const;
 
+const os = Deno.build.os;
+
 async function getClipboardContent(): Promise<string> {
-  const os = Deno.build.os;
   
   try {
     switch (os) {
@@ -51,7 +52,6 @@ async function getClipboardContent(): Promise<string> {
 }
 
 async function setClipboardContent(content: string): Promise<void> {
-  const os = Deno.build.os;
   
   try {
     switch (os) {
